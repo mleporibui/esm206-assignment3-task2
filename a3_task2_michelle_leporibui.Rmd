@@ -5,19 +5,13 @@ author: "ESM 206 Fall 2020"
 output: html_document
 ---
 
+# a3_task2_michelle_leporibui
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 library(tidyverse)
 library(lubridate)
 ```
-
-## BEFORE YOU START: Save a renamed copy of this .Rmd
-
-- Before moving on, click **File > Save As** to save a copy of this .Rmd (also to the `src` folder in this project) that is updated with your first and last name in the file name (`a3_task2_firstname_lastname.Rmd`). 
-
-- Once you have saved your copy of the .Rmd, you can delete the generic original (if you want...or just leave it there) 
-
-- Run the setup chunk to get the `tidyverse` & `lubridate` packages attached (`lubridate` is a package to make it a bit easier to work with dates & times)
 
 ## Follow along examples
 
@@ -245,9 +239,9 @@ Starting from the `lakers` dataset, create a new dataset called `gasol_hookshots
 gasol_hookshots <- lakers %>%  # new data frame
   filter(player == "Pau Gasol" & type == "hook") %>% #hook shots by Pau Gasol
   mutate(new_date = ymd(date)) %>% # new column with Date class dates
-  mutate(month = month(new_date)) %>% #new column for months
+  mutate(month = month(new_date)) %>%  #new column for months 
   count(month) # count shots per month
-
+gasol_hookshots #View it
 ```
 
 ### 4. `dplyr::case_when()`
